@@ -1,3 +1,3 @@
 
-      bistrox/target/site/apidocs/index.html
+    JgrapthT Demo Project for Bistrox
     
