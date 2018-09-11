@@ -25,6 +25,7 @@ public class BistoxUndirectedWeighedGraph {
     public String SourcePoint;
     public String DestinationPoint;
 
+    
     public BistoxUndirectedWeighedGraph(String Vertex, String Edge, Double Weight) {
         this.sourceVertex = Vertex;
         this.targetVertex = Edge;
