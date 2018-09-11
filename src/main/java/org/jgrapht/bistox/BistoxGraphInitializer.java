@@ -10,7 +10,6 @@
  */
 package org.jgrapht.bistox;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +23,7 @@ public class BistoxGraphInitializer {
     /**
      * An object graph is a collection of nodes and edges connecting these nodes. 
      * Object graphs provide an easy way to account for mutual relationships in the system
-     * 
+     * Structure new BistoxUndirectedWeighedGraph(sourceVertex, targetVertex, Weight - expressed in kilometers); 
      * @return the collection of nodes and edges
      */
    public static BistoxUndirectedWeighedGraph[] CreateNodeListGoogleMap()
@@ -47,6 +46,12 @@ public class BistoxGraphInitializer {
        return bxGraphList;      
    }
    
+   /**
+     * An object graph is a collection of nodes and edges connecting these nodes. 
+     * Object graphs provide an easy way to account for mutual relationships in the system
+     * Structure new BistoxUndirectedWeighedGraph(sourceVertex, targetVertex, Weight - expressed in kilometers); 
+     * @return the collection of nodes and edges
+     */
    public static BistoxUndirectedWeighedGraph[] CreateNodeList()
    {
        
@@ -71,7 +76,7 @@ public class BistoxGraphInitializer {
      * @param bistroxG
      * @return the collection of nodes and edges
      */
-   public ArrayList<BistoxUndirectedWeighedGraph> CreateGraphList(ArrayList<BistoxUndirectedWeighedGraph> bistroxG)
+   public ArrayList<BistoxUndirectedWeighedGraph> CreateNodeList(ArrayList<BistoxUndirectedWeighedGraph> bistroxG)
    {
        ArrayList<BistoxUndirectedWeighedGraph> objectGraph =  new ArrayList<>(); 
              

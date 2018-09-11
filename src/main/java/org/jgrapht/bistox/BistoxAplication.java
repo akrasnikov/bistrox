@@ -10,21 +10,12 @@
  */
 package org.jgrapht.bistox;
 
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.function.Supplier;
 import org.jgrapht.Graph;
-import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultUndirectedWeightedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleDirectedWeightedGraph;
-import org.jgrapht.graph.SimpleGraph;
-import org.jgrapht.alg.shortestpath.FloydWarshallShortestPaths;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
 /**
@@ -61,6 +52,11 @@ public class BistoxAplication {
        System.out.println("End");
     }
       
+    /**
+     * the method looks for a short path from the beginning to the end of the path
+     * 
+     * @returns a list of vertices
+     */
     private static List<String> getRoute(String startVertex, String endVertex, Graph<String, DefaultWeightedEdge> graph)
     {
         DijkstraShortestPath<String, DefaultWeightedEdge> dijkstra = new DijkstraShortestPath<>(graph);
@@ -74,6 +70,10 @@ public class BistoxAplication {
          return  dijkstra.getPath(startVertex,endVertex).getVertexList();          
     }
 
+    /**
+     *
+     * @returns a graph of type Graph <String, DefaultWeightedEdge>
+     */
     private static Graph<String, DefaultWeightedEdge> buildBistoxGraph(  BistoxUndirectedWeighedGraph[] bistroxNodeList) {
         //Graph<String, DefaultWeightedEdge> graph = new SimpleGraph<>(DefaultWeightedEdge.class);
         Graph<String, DefaultWeightedEdge> bxGraph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
@@ -95,11 +95,14 @@ public class BistoxAplication {
         return bxGraph;
     }
     
+    /**
+     * method searches for all vertices associated with sourceVertex
+     * @returns vertices
+     */
     private static Object[] getAllEdge(String sourceVertex,Graph<String, DefaultWeightedEdge> graph)
     {
        Set<DefaultWeightedEdge> edgesOf = graph.edgesOf(sourceVertex);
-       return edgesOf.toArray();
-                   
+       return edgesOf.toArray();                   
     }
     
     
